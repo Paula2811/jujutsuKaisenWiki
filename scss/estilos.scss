@@ -108,6 +108,7 @@ p{
                 background-color: $colorTablaTitulo;
                 color: $colorParrafos;
                 text-align: center;
+                caption-side: top;
             }
             .section1__tablasubtitulo{
                 background-color: $colorTablaSub;
@@ -115,9 +116,11 @@ p{
             }
             .section1__tablaelemento{
                 background-color: $colorTablaSub;
+                padding-left: 8px;
             }
             .section1__tablacolumna2{
                 background-color: $colorTabla;
+                text-align: center;
             }
             .section1__tablalista{
                 color: $colorParrafos;

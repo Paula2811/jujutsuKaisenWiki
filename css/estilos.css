@@ -89,14 +89,17 @@ p {
       .section1 .section1__articulo .section1__tabla .section1__tablainicio {
         background-color: #390000;
         color: #f1eded;
-        text-align: center; }
+        text-align: center;
+        caption-side: top; }
       .section1 .section1__articulo .section1__tabla .section1__tablasubtitulo {
         background-color: #a76f11;
         text-align: center; }
       .section1 .section1__articulo .section1__tabla .section1__tablaelemento {
-        background-color: #a76f11; }
+        background-color: #a76f11;
+        padding-left: 8px; }
       .section1 .section1__articulo .section1__tabla .section1__tablacolumna2 {
-        background-color: #ad823a; }
+        background-color: #ad823a;
+        text-align: center; }
       .section1 .section1__articulo .section1__tabla .section1__tablalista {
         color: #f1eded;
         padding: 5px;
