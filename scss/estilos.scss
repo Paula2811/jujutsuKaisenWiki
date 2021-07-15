@@ -86,24 +86,37 @@ p{
     text-align: justify;
     line-height: normal;
     margin: 10px;
+    
 }
 /*Sección 1*/
 .section1{
     grid-area: seccion1;
     .section1__articulo{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:"texto tabla"
+                            "imagen tabla";
         .section1__parrafoprincipal{
-            width: 65%;
+                width: 85%;
+                text-align: justify;
+                justify-self: center;
+                align-self: center;
+                grid-area: texto;
         }
         .section1__imageninicio{
             @include sizes(284px,412px);
+            justify-self: center;
+            align-self: center;
+            grid-area: imagen;
         }
         .section1__tabla{
             color: white;
+            height: 80%;
             margin-top: 20px;
+            grid-area: tabla;
+            justify-self: center;
+            align-self: center;
             .section1__tablainicio{
                 background-color: $colorTablaTitulo;
                 color: $colorParrafos;
@@ -111,12 +124,13 @@ p{
                 caption-side: top;
             }
             .section1__tablasubtitulo{
-                background-color: $colorTablaSub;
-                text-align: center;
+                    background-color: $colorTablaSub;
+                    text-align: center;
             }
             .section1__tablaelemento{
                 background-color: $colorTablaSub;
                 padding-left: 8px;
+                vertical-align: top;
             }
             .section1__tablacolumna2{
                 background-color: $colorTabla;
@@ -322,7 +336,7 @@ p{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100%;
-    grid-template-areas: "anime" "manga";
+    grid-template-areas: "anime manga";
     gap: 5px;
     .sectionAnimeManga__Anime{
         grid-area: anime;
@@ -365,6 +379,21 @@ p{
                             "aside"; 
         grid-area: main; 
     }
+    .section1{
+        grid-area: seccion1;
+        .section1__articulo{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            .section1__parrafoprincipal{
+                width: 65%;
+            }
+            .section1__imageninicio{
+                @include sizes(284px,412px);
+            }
+        }
+    }
     .section2__imagen2{
         @include sizes(280px,162px);
     }
@@ -406,7 +435,7 @@ p{
         display: grid; 
         width: 100%;
         grid-template-columns: 100%; 
-        grid-template-rows: 70px 1300px 1200px 1000px; 
+        grid-template-rows: 70px 900px 1200px 1000px; 
         gap: 0px 0px; 
         grid-template-areas:"tituloPrincipal"
                             "seccion1"
@@ -430,7 +459,7 @@ p{
         width: 100%;
         grid-column-gap: 10px;
         grid-template-columns: 3fr 1fr; 
-        grid-template-rows: 70px 1200px 1000px; 
+        grid-template-rows: 70px 900px 1000px; 
         grid-template-areas:"tituloPrincipal tituloPrincipal"
                             "seccion1 aside"
                             "seccion2 aside"; 
