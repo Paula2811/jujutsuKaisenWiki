@@ -300,6 +300,9 @@ p{
 
 }
 /*Bootstrap*/
+.list-group{
+    flex: auto;
+}
 .list-group-item{
     background-color: $colorFondo;
     border: 3px solid #0e0e1d;
@@ -313,7 +316,41 @@ p{
     text-decoration: none;
     color: white;
 }
-
+/*Pagina Links*/
+/*Estilo para la pagina Links*/
+.sectionAnimeManga{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+    grid-template-areas: "anime" "manga";
+    gap: 5px;
+    .sectionAnimeManga__Anime{
+        grid-area: anime;
+        display: flex;
+        flex: auto;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .sectionAnimeManga__Manga{
+        grid-area: manga;
+        display: flex;
+        flex: auto;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+.sectionAnimeManga__lista{
+    width: 100%;
+    margin-top: 15px;
+}
+.gif{
+    border-width: 10px;
+    border-color: black;
+}
+.redes{
+    display: flex;
+    justify-content: space-around;
+}
 /**grid para el inicio*/
 @media only screen and (max-width:600px){
     .main {
@@ -341,6 +378,28 @@ p{
         display: flex;
         flex-direction: column;
     }
+    .sectionAnimeManga{
+        display: flex;
+        flex-direction: column;
+        .sectionAnimeManga__Anime{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .sectionAnimeManga__Manga{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+    .gif{
+        @include sizes(268px, 268px);
+    }
+    .redes{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
 }
 @media only screen and (min-width:600px){
     .main {
@@ -361,8 +420,10 @@ p{
     .main__parrafoarguemento{
         width: 80%;
     }
+    .gif{
+        @include sizes(201px, 201px);
+    }
 }
-
 @media only screen and ( min-width:992px){
     .main{
         display: grid; 
@@ -390,6 +451,9 @@ p{
         width: 35%;
     }
     .aside{
-       max-height: 900px ; 
+        max-height: 900px ; 
+    }
+    .gif{
+        @include sizes(268px, 268px);
     }
 }
