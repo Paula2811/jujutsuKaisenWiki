@@ -72,12 +72,13 @@ p {
 
 /*Sección 1*/
 .section1 {
-  grid-area: seccion1; }
+  grid-area: seccion1;
+  margin-bottom: 5px; }
   .section1 .section1__articulo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-template-areas: "texto tabla" "imagen tabla"; }
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "texto texto" "imagen tabla" "imagen tabla"; }
     .section1 .section1__articulo .section1__parrafoprincipal {
       width: 85%;
       text-align: justify;
@@ -123,7 +124,8 @@ p {
 
 /*Sección 2*/
 .section2 {
-  grid-area: seccion2; }
+  grid-area: seccion2;
+  margin-bottom: 10px; }
   .section2 .section2__articuloargumento {
     display: flex;
     flex-direction: column;
@@ -136,7 +138,7 @@ p {
       transition: transform 0.5s;
       margin: 20px 20px; }
     .section2 .section2__articuloargumento .section2__imagen1:hover {
-      transform: scale(1.3, 1.3); }
+      transform: scale(1.2, 1.2); }
     .section2 .section2__articuloargumento .section2__imagen2 {
       margin: 10px;
       transform: scale(1, 1);
@@ -153,6 +155,7 @@ p {
 .footer {
   color: #f1eded;
   display: flex;
+  flex: auto;
   justify-content: space-around;
   background-image: linear-gradient(to right, #0f0f29, #63090d);
   grid-area: footer;
@@ -160,9 +163,6 @@ p {
   .footer .footer__container {
     margin-left: 40px;
     margin-right: 40px; }
-    .footer .footer__container .footer__texto {
-      border-bottom: 2px;
-      padding-bottom: 4px; }
   .footer .footer__lista {
     padding-left: 10px; }
     .footer .footer__lista .footer__elemento {
@@ -171,6 +171,10 @@ p {
       .footer .footer__lista .footer__elemento .footer__enlaces {
         text-decoration: none;
         color: #f1eded; }
+  .footer .footer__texto {
+    border-bottom: 2px;
+    padding-bottom: 4px;
+    font-size: 20px; }
 
 /*Estilo pagina Links con extend*/
 .links .links__lista {
@@ -268,12 +272,18 @@ p {
   max-width: 1700px;
   margin-bottom: 10px; }
 
+.carousel {
+  margin-top: 80px;
+  margin-bottom: 10px; }
+
+.list-group-item {
+  position: static; }
+
 /* enlaces */
 .enlaces {
   text-decoration: none;
   color: white; }
 
-/*Pagina Links*/
 /*Estilo para la pagina Links*/
 .sectionAnimeManga {
   display: grid;
@@ -304,15 +314,16 @@ p {
 
 .redes {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-top: 20px; }
 
-/**grid para el inicio*/
+/**media queries*/
 @media only screen and (max-width: 600px) {
   .main {
     display: grid;
     width: 100%;
     grid-template-columns: 100%;
-    grid-template-rows: 70px 1400px 1400px 650px;
+    grid-template-rows: 70px auto auto auto;
     gap: 0px 0px;
     grid-template-areas: "tituloPrincipal" "seccion1" "seccion2" "aside";
     grid-area: main; }
@@ -356,14 +367,16 @@ p {
   .redes {
     display: flex;
     flex-direction: column;
-    justify-content: space-around; } }
+    justify-content: space-around; }
+  .carousel {
+    margin-top: 10px; } }
 
 @media only screen and (min-width: 600px) {
   .main {
     display: grid;
     width: 100%;
     grid-template-columns: 100%;
-    grid-template-rows: 70px 900px 1200px 1000px;
+    grid-template-rows: 70px auto auto auto;
     gap: 0px 0px;
     grid-template-areas: "tituloPrincipal" "seccion1" "seccion2" "aside";
     grid-area: main; }
@@ -381,8 +394,8 @@ p {
     width: 100%;
     grid-column-gap: 10px;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 70px 900px 1000px;
-    grid-template-areas: "tituloPrincipal tituloPrincipal" "seccion1 aside" "seccion2 aside";
+    grid-template-rows: 70px auto auto;
+    grid-template-areas: "tituloPrincipal tituloPrincipal" "seccion1 aside" "seccion2 seccion2";
     grid-area: main; }
   .main__articuloargumento {
     display: flex;
