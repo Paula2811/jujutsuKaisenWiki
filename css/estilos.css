@@ -27,9 +27,9 @@ body {
   height: 80px;
   width: 100%;
   border-bottom: 2px solid #f1eded;
-  background-image: linear-gradient(to right, #0f0f29, #63090d); }
+  background-image: linear-gradient(to right, #0f0f29, #811016); }
   .navbar .navbar__container {
-    background-image: linear-gradient(to right, #0f0f29, #63090d);
+    background-image: linear-gradient(to right, #0f0f29, #811016);
     align-items: left; }
     .navbar .navbar__container .navbar__lista {
       margin: 0;
@@ -49,7 +49,7 @@ body {
 
 /*Main*/
 .titulo {
-  color: #63090d;
+  color: #811016;
   margin-top: 10px;
   align-self: center;
   margin-bottom: 0px;
@@ -59,7 +59,7 @@ body {
   grid-area: tituloPrincipal; }
 
 .subtitulo {
-  color: #8f0e15;
+  color: #74090e;
   border-bottom: 2px solid #f1eded;
   padding-bottom: 4px;
   margin-bottom: 15px;
@@ -183,7 +183,7 @@ p {
   display: flex;
   flex: auto;
   justify-content: space-around;
-  background-image: linear-gradient(to right, #0f0f29, #63090d);
+  background-image: linear-gradient(to right, #0f0f29, #811016);
   grid-area: footer;
   align-items: center; }
   .footer .footer__container {
