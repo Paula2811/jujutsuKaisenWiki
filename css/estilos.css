@@ -457,6 +457,7 @@ p {
 
 /**media queries*/
 @media only screen and (max-width: 600px) {
+  /*Estilos pagina Inicio*/
   .main {
     display: grid;
     width: 100%;
@@ -482,11 +483,13 @@ p {
     width: 280px; }
   .aside__imagen {
     max-width: 100%; }
+  /*Estilo para pagina Personajes*/
   .personajes {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center; }
+  /*Estilo para Media*/
   .galeriaConteiner {
     display: flex;
     flex-direction: column; }
@@ -512,8 +515,7 @@ p {
   .redes__gif {
     max-width: 100%;
     height: 300px; }
-  /*Estilos para la pagina historia*/
-  /*estilo pagina de Historia*/
+  /*Estilos para la pagina Historia*/
   .manga {
     margin: 0;
     display: grid;
@@ -534,6 +536,7 @@ p {
       margin-bottom: 10px; } }
 
 @media only screen and (min-width: 600px) {
+  /*Estilos pagina Inicio*/
   .main {
     display: grid;
     width: 100%;
@@ -546,6 +549,7 @@ p {
     height: 90%; }
   .main__parrafoarguemento {
     width: 80%; }
+  /*Estilos para la pagina Links*/
   .gif {
     height: 201px;
     width: 201px; }
@@ -554,6 +558,7 @@ p {
     width: 400px; } }
 
 @media only screen and (min-width: 992px) {
+  /*Estilos pagina Inicio*/
   .main {
     display: grid;
     width: 100%;
@@ -575,6 +580,7 @@ p {
     width: 35%; }
   .aside {
     max-height: 900px; }
+  /*Estilos para la pagina Links*/
   .gif {
     height: 268px;
     width: 268px; }
