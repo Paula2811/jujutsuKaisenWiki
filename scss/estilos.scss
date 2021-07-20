@@ -527,6 +527,11 @@ p{
 .imagenIcono{
     @include sizes (60px, 60px)
 }
+.redes__gif{
+    grid-area: gif;
+    justify-self: center;
+    align-self: center;
+}
 /*Estilo pagina Links con extend*/
 .links{
     @extend .main2;
@@ -620,6 +625,7 @@ p{
     .redes__gif{
         max-width: 100%;
         height: 300px;
+        
     }
     
     /*Estilos para la pagina historia*/

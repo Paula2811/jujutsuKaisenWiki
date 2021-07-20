@@ -440,6 +440,11 @@ p {
   height: 60px;
   width: 60px; }
 
+.redes__gif {
+  grid-area: gif;
+  justify-self: center;
+  align-self: center; }
+
 /*Estilo pagina Links con extend*/
 .links .links__lista {
   margin: 0; }
