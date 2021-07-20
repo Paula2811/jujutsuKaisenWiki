@@ -59,7 +59,7 @@ body {
   grid-area: tituloPrincipal; }
 
 .subtitulo {
-  color: #790c11;
+  color: #8f0e15;
   border-bottom: 2px solid #f1eded;
   padding-bottom: 4px;
   margin-bottom: 15px;
@@ -99,7 +99,7 @@ p {
       align-self: center;
       grid-area: imagen; }
     .section1 .section1__articulo .section1__tabla {
-      color: white;
+      color: #f1eded;
       height: 80%;
       margin-top: 20px;
       grid-area: tabla;
@@ -244,7 +244,7 @@ p {
       margin-top: 15px;
       line-height: 1.9; }
   .manga .manga__tabla {
-    color: white;
+    color: #f1eded;
     height: 80%;
     margin-top: 20px;
     grid-area: tabla;
@@ -304,8 +304,7 @@ p {
     height: 80%;
     margin-top: 20px;
     grid-area: tabla;
-    justify-self: center;
-    align-self: center; }
+    justify-self: center; }
     .anime .anime__tabla .anime__tablainicio {
       background-color: #360000;
       color: #f1eded;
@@ -380,7 +379,7 @@ p {
 /* enlaces */
 .enlaces {
   text-decoration: none;
-  color: white; }
+  color: #f1eded; }
 
 /*Estilo para la pagina Links*/
 .redes {
@@ -398,7 +397,7 @@ p {
     .redes .redes__lista .redes__item {
       list-style-type: none; }
       .redes .redes__lista .redes__item .redes__enlaces {
-        color: white;
+        color: #f1eded;
         text-align: 3;
         font-size: 25px; }
 
@@ -555,7 +554,7 @@ p {
     width: 201px; }
   .redes__gif {
     height: 308px;
-    width: 400px; } }
+    width: 380px; } }
 
 @media only screen and (min-width: 992px) {
   /*Estilos pagina Inicio*/
