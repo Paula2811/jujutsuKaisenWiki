@@ -3,9 +3,8 @@ $colorFondo: #15163c;
 $colorTitulo: #63090d;
 $colorSubtitulo: #790c11;
 $colorParrafos: rgb(241, 237, 237);
-$colorTablaTitulo: #390000; 
-$colorTablaSub: #a76f11;
-$colorTabla: #ad823a;
+$colorTablaTitulo: #360000; 
+$colorTablaSub: #811010;
 $colorBorde: #11111f;
 $colorNavbar: #0f0f29;
 
@@ -67,6 +66,8 @@ body{
 /*Main*/
 .titulo{
     color: $colorTitulo;
+    margin-top: 10px;
+    align-self: center;
     margin-bottom: $headings-margin-bottom;
     border-bottom: 2px solid $colorParrafos;
     padding-bottom: 3px;
@@ -78,6 +79,7 @@ body{
     border-bottom: 2px solid $colorParrafos;
     padding-bottom: 4px;
     margin-bottom: 15px;
+    margin-top: 10px;
 }
 p{
     color: white;
@@ -88,6 +90,7 @@ p{
     margin: 10px;
     
 }
+/*Estilos para la pagina Inicio*/
 /*Sección 1*/
 .section1{
     grid-area: seccion1;
@@ -100,8 +103,11 @@ p{
                             "imagen tabla"
                             "imagen tabla";
         .section1__parrafoprincipal{
-                width: 85%;
-                text-align: justify;
+                width: 90%;
+                background-color: $colorNavbar;
+                padding: 15px;
+                font-size: 20px;
+                text-align: center;
                 justify-self: center;
                 align-self: center;
                 grid-area: texto;
@@ -126,17 +132,19 @@ p{
                 caption-side: top;
             }
             .section1__tablasubtitulo{
-                    background-color: $colorTablaSub;
-                    text-align: center;
+                background-color: $colorTablaTitulo;
+                text-align: center;
             }
             .section1__tablaelemento{
                 background-color: $colorTablaSub;
                 padding-left: 8px;
                 vertical-align: top;
+                border: 2px solid $colorTablaTitulo;
             }
             .section1__tablacolumna2{
-                background-color: $colorTabla;
+                background-color: $colorTablaSub;
                 text-align: center;
+                border: 2px solid $colorTablaTitulo;
             }
             .section1__tablalista{
                 color: $colorParrafos;
@@ -184,6 +192,26 @@ p{
 /*aside*/
 .aside{
     grid-area: aside;
+    .aside__texto{
+        color: $colorParrafos;
+        text-align: center;
+        font-size: 23px;
+        margin-top: 5px;
+    }
+    .aside__carruselContenedor{
+        display: grid;
+        height: 800px;
+        max-width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr ;
+        grid-template-areas:"carrusel";
+    }
+    .aside__carousel{
+        grid-area: carrusel;
+        justify-self: center;
+        align-self: center;
+        margin-bottom: 15px;
+    }
 }
 /*Footer*/
 .footer{
@@ -215,21 +243,6 @@ p{
         font-size: 20px;
     }  
 }
-/*Estilo pagina Links con extend*/
-.links{
-    @extend .main2;
-    .links__lista{
-        margin: 0;
-        .links__elemento{
-            list-style-type: none;
-            .links__enlaces{
-                text-decoration: none;
-                color: $colorParrafos;
-            }
-        }
-        
-    }
-}
 /*Estilos de la pagina Personajes*/
 .personajes{
     display: flex;
@@ -245,12 +258,19 @@ p{
 /*estilo pagina de Historia*/
 .manga{
     margin: 0;
-    .manga__contenido{
-        margin: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+    display: grid;
+        grid-template-columns: 1.7fr 1fr;
+        grid-template-rows: auto 0.5fr 1fr;
+        grid-template-areas:"titulo titulo"
+                            "manga tabla"
+                            "curio tabla";
+    .subtitulo{
+        grid-area: titulo;
+    }
+    .manga__articulo1{
+        grid-area: manga;
         .manga__parrafo{
+            margin: 20px;
             color: $colorParrafos;
             font-size: 18px;
         }
@@ -264,24 +284,126 @@ p{
             }
         }
     }
+    .manga__articulo2{
+        grid-area: curio;
+        .manga__curioTitulo{
+            color: #811010;
+            border-bottom: 2px solid $colorParrafos;
+            margin: 10px;
+        }
+        .manga__lista{
+            color: $colorParrafos;
+            margin-top: 15px;
+            line-height: 1.9;
+        }
+    }
+    .manga__tabla{
+        color: white;
+        height: 80%;
+        margin-top: 20px;
+        grid-area: tabla;
+        justify-self: center;
+
+        .manga__tablainicio{
+            background-color: $colorTablaTitulo;
+            color: $colorParrafos;
+            text-align: center;
+            caption-side: top;
+            border: 2px solid #811010;
+            font-weight: 600;
+        }
+        .manga__tablasubtitulo{
+            background-color: $colorTablaTitulo;
+            text-align: center;
+            border: 2px solid #811010;
+            font-weight: 600;
+        }
+        .manga__imagenTabla{
+            @include sizes (267px, 419px)
+        }
+        .manga__tablaelemento{
+            background-color: $colorTablaSub;
+            padding-left: 8px;
+            vertical-align: top;
+            border: 2px solid $colorTablaTitulo;
+            font-weight: 600;
+        }
+        .manga__tablacolumna2{
+            background-color: $colorTablaSub;
+            text-align: center;
+            border: 2px solid $colorTablaTitulo;
+        }
+    }
 }
 .anime{
     margin: 0;
-    .anime__parrafo{
-        margin: 20px;
-        color: $colorParrafos;
-        font-size: 18px;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    grid-template-rows: auto 0.5fr 1fr;
+    grid-template-areas:"titulo titulo"
+                        "anime tabla"
+                        "curio tabla";
+    .subtitulo{
+        grid-area: titulo;
     }
-}
-/*grid del body de las otras paginas*/
-.container2 {
-    display: grid; 
-    grid-template-columns: 100%; 
-    grid-template-rows: 205px 90px 1fr 300px; 
-    grid-template-areas:"header"
-                        "nav"
-                        "main"
-                        "footer"; 
+    .anime__articulo1{
+        grid-area: anime;
+        .anime__parrafo{
+            margin: 20px;
+            color: $colorParrafos;
+            font-size: 18px;
+        }
+    }
+    .anime__articulo2{
+        grid-area: curio;
+        .anime__curioTitulo{
+            color: #811010;
+            border-bottom: 2px solid $colorParrafos;
+            margin: 10px;
+        }
+        .anime__lista{
+            color: $colorParrafos;
+            margin-top: 15px;
+            line-height: 1.9;
+        }
+    }
+    .anime__tabla{
+        color: white;
+        height: 80%;
+        margin-top: 20px;
+        grid-area: tabla;
+        justify-self: center;
+        align-self: center;
+        .anime__tablainicio{
+            background-color: #360000;
+            color: $colorParrafos;
+            text-align: center;
+            caption-side: top;
+            border: 2px solid #811010;
+            font-weight: 600;
+        }
+        .anime__tablasubtitulo{
+            background-color: #360000;
+            text-align: center;
+            border: 2px solid #811010;
+            font-weight: 600;
+        }
+        .anime__imagenTabla{
+            @include sizes (267px, 378px)
+        }
+        .anime__tablaelemento{
+            background-color: #811010;
+            padding-left: 8px;
+            vertical-align: top;
+            border: 2px solid #360000;
+            font-weight: 600;
+        }
+        .anime__tablacolumna2{
+            background-color: #811010;
+            text-align: center;
+            border: 2px solid #360000;
+        }
+    }
 }
 /*grid para el main de las otras paginas*/
 .main2{
@@ -293,8 +415,15 @@ p{
                             "seccion1"
                             "seccion2"; 
     grid-area: main; 
+    margin-bottom: 10px;
 }
 /*Grid de la pagina de Media*/
+.parrafoPrincipal{
+    padding: 15px;
+    background-color: $colorNavbar;
+    font-size: 23px;
+    text-align: center;
+}
 .galeriaConteiner{
     display: grid;
     grid-template-columns: repeat(2,1fr);
@@ -318,23 +447,9 @@ p{
 
 }
 /*Bootstrap*/
-.list-group{
-    flex: auto;
-}
-.list-group-item{
-    background-color: $colorFondo;
-    border: 3px solid #0e0e1d;
-}
 .container{
     max-width: 1700px;
     margin-bottom: 10px;
-}
-.carousel{
-    margin-top: 80px;
-    margin-bottom: 10px;
-}
-.list-group-item{
-    position: static;
 }
 /* enlaces */
 .enlaces{ 
@@ -342,39 +457,92 @@ p{
     color: white;
 }
 /*Estilo para la pagina Links*/
-.sectionAnimeManga{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100%;
-    grid-template-areas: "anime manga";
-    gap: 5px;
-    .sectionAnimeManga__Anime{
-        grid-area: anime;
-        display: flex;
-        flex: auto;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-    .sectionAnimeManga__Manga{
-        grid-area: manga;
-        display: flex;
-        flex: auto;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-}
-.sectionAnimeManga__lista{
-    width: 100%;
-    margin-top: 15px;
-}
-.gif{
-    border-width: 10px;
-    border-color: black;
-}
 .redes{
-    display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:"titulo titulo"
+                        "gif links";
+    gap: 10px;
+    .subtitulo{
+        grid-area: titulo;
+        
+    }
+    .redes__lista{
+        grid-area: links;
+        justify-self: flex-start;
+        align-self: center;
+        .redes__item{
+            list-style-type: none;
+            .redes__enlaces{
+                color: white;
+                text-align: 3;
+                font-size: 25px;
+            }
+        }
+    }
+}
+.sectionAnime{
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:"titulo titulo"
+                        "gif links";
+    gap: 10px;
+    .subtitulo{
+        grid-area: titulo;
+    }
+    .sectionAnime__lista{
+        grid-area: links;
+        justify-self: flex-start;
+        align-self: center;
+    }
+    .gif{
+        grid-area: gif;
+        justify-self: center;
+        align-self: center;
+    }
+}
+.sectionManga{
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:"titulo titulo"
+                        "links gif";
+    gap: 10px;
+    .subtitulo{
+        grid-area: titulo;
+    }
+    .sectionManga__lista{
+        grid-area: links;
+        justify-self: center;
+        align-self: center;
+    }
+    .gif{
+        grid-area: gif;
+        justify-self: center;
+        align-self: center;
+    }
+}
+.imagenIcono{
+    @include sizes (60px, 60px)
+}
+/*Estilo pagina Links con extend*/
+.links{
+    @extend .main2;
+    .links__lista{
+        margin: 0;
+        .links__elemento{
+            list-style-type: none;
+            .links__enlaces{
+                
+                color: $colorParrafos;
+                text-align: 3;
+                font-size: 25px;
+            }
+        }
+        
+    }
 }
 /**media queries*/
 @media only screen and (max-width:600px){
@@ -398,7 +566,7 @@ p{
             justify-content: space-between;
             align-items: center;
             .section1__parrafoprincipal{
-                width: 65%;
+                width: 90%;
             }
             .section1__imageninicio{
                 @include sizes(284px,412px);
@@ -407,6 +575,9 @@ p{
     }
     .section2__imagen2{
         @include sizes(280px,162px);
+    }
+    .aside__imagen{
+        max-width: 100%;
     }
     .personajes{
         display: flex;
@@ -418,30 +589,68 @@ p{
         display: flex;
         flex-direction: column;
     }
-    .sectionAnimeManga{
-        display: flex;
-        flex-direction: column;
-        .sectionAnimeManga__Anime{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
-        .sectionAnimeManga__Manga{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-        }
+    /*Estilos para la pagina Links*/
+    .redes{
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr;
+        grid-template-areas:"titulo"
+                            "links"
+                            "gif";
+    }
+    .sectionAnime{
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr;
+        grid-template-areas:"titulo"
+                            "links"
+                            "gif";
+    }
+    .sectionManga{
+        display: grid;
+        grid-auto-columns: 1fr;
+        grid-template-rows: auto 1fr 1fr;
+        grid-template-areas:"titulo"
+                            "links"
+                            "gif";
     }
     .gif{
-        @include sizes(268px, 268px);
+        @include sizes (268px, 268px)
     }
-    .redes{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
+    .redes__gif{
+        max-width: 100%;
+        height: 300px;
     }
-    .carousel{
-        margin-top: 10px;
+    
+    /*Estilos para la pagina historia*/
+    /*estilo pagina de Historia*/
+    .manga{
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 0.5fr 1fr 1fr;
+        grid-template-areas:"titulo"
+                            "manga"
+                            "tabla"
+                            "curio";
+        .manga__articulo2{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    }
+    .anime{
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 0.5fr 1fr auto;
+        grid-template-areas:"titulo"
+                            "anime"
+                            "tabla"
+                            "curio";
+        .anime__articulo2{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
     }
 }
 @media only screen and (min-width:600px){
@@ -465,6 +674,9 @@ p{
     }
     .gif{
         @include sizes(201px, 201px);
+    }
+    .redes__gif{
+        @include sizes (400px, 308px)
     }
 }
 @media only screen and ( min-width:992px){
@@ -498,5 +710,8 @@ p{
     }
     .gif{
         @include sizes(268px, 268px);
+    }
+    .redes__gif{
+        @include sizes (490px, 308px)
     }
 }

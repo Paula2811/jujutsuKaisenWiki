@@ -50,6 +50,8 @@ body {
 /*Main*/
 .titulo {
   color: #63090d;
+  margin-top: 10px;
+  align-self: center;
   margin-bottom: 0px;
   border-bottom: 2px solid #f1eded;
   padding-bottom: 3px;
@@ -60,7 +62,8 @@ body {
   color: #790c11;
   border-bottom: 2px solid #f1eded;
   padding-bottom: 4px;
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  margin-top: 10px; }
 
 p {
   color: white;
@@ -70,6 +73,7 @@ p {
   line-height: normal;
   margin: 10px; }
 
+/*Estilos para la pagina Inicio*/
 /*Sección 1*/
 .section1 {
   grid-area: seccion1;
@@ -80,8 +84,11 @@ p {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas: "texto texto" "imagen tabla" "imagen tabla"; }
     .section1 .section1__articulo .section1__parrafoprincipal {
-      width: 85%;
-      text-align: justify;
+      width: 90%;
+      background-color: #0f0f29;
+      padding: 15px;
+      font-size: 20px;
+      text-align: center;
       justify-self: center;
       align-self: center;
       grid-area: texto; }
@@ -99,20 +106,22 @@ p {
       justify-self: center;
       align-self: center; }
       .section1 .section1__articulo .section1__tabla .section1__tablainicio {
-        background-color: #390000;
+        background-color: #360000;
         color: #f1eded;
         text-align: center;
         caption-side: top; }
       .section1 .section1__articulo .section1__tabla .section1__tablasubtitulo {
-        background-color: #a76f11;
+        background-color: #360000;
         text-align: center; }
       .section1 .section1__articulo .section1__tabla .section1__tablaelemento {
-        background-color: #a76f11;
+        background-color: #811010;
         padding-left: 8px;
-        vertical-align: top; }
+        vertical-align: top;
+        border: 2px solid #360000; }
       .section1 .section1__articulo .section1__tabla .section1__tablacolumna2 {
-        background-color: #ad823a;
-        text-align: center; }
+        background-color: #811010;
+        text-align: center;
+        border: 2px solid #360000; }
       .section1 .section1__articulo .section1__tabla .section1__tablalista {
         color: #f1eded;
         padding: 5px;
@@ -150,6 +159,23 @@ p {
 /*aside*/
 .aside {
   grid-area: aside; }
+  .aside .aside__texto {
+    color: #f1eded;
+    text-align: center;
+    font-size: 23px;
+    margin-top: 5px; }
+  .aside .aside__carruselContenedor {
+    display: grid;
+    height: 800px;
+    max-width: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "carrusel"; }
+  .aside .aside__carousel {
+    grid-area: carrusel;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 15px; }
 
 /*Footer*/
 .footer {
@@ -176,15 +202,6 @@ p {
     padding-bottom: 4px;
     font-size: 20px; }
 
-/*Estilo pagina Links con extend*/
-.links .links__lista {
-  margin: 0; }
-  .links .links__lista .links__elemento {
-    list-style-type: none; }
-    .links .links__lista .links__elemento .links__enlaces {
-      text-decoration: none;
-      color: #f1eded; }
-
 /*Estilos de la pagina Personajes*/
 .personajes {
   display: flex;
@@ -197,35 +214,123 @@ p {
 
 /*estilo pagina de Historia*/
 .manga {
-  margin: 0; }
-  .manga .manga__contenido {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; }
-    .manga .manga__contenido .manga__parrafo {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1.7fr 1fr;
+  grid-template-rows: auto 0.5fr 1fr;
+  grid-template-areas: "titulo titulo" "manga tabla" "curio tabla"; }
+  .manga .subtitulo {
+    grid-area: titulo; }
+  .manga .manga__articulo1 {
+    grid-area: manga; }
+    .manga .manga__articulo1 .manga__parrafo {
+      margin: 20px;
       color: #f1eded;
       font-size: 18px; }
-    .manga .manga__contenido .manga__botonSpoliler {
+    .manga .manga__articulo1 .manga__botonSpoliler {
       font-size: 15px; }
-      .manga .manga__contenido .manga__botonSpoliler .manga__container {
+      .manga .manga__articulo1 .manga__botonSpoliler .manga__container {
         color: #15163c; }
-        .manga .manga__contenido .manga__botonSpoliler .manga__container .manga__spoiler {
+        .manga .manga__articulo1 .manga__botonSpoliler .manga__container .manga__spoiler {
           margin: 2px; }
+  .manga .manga__articulo2 {
+    grid-area: curio; }
+    .manga .manga__articulo2 .manga__curioTitulo {
+      color: #811010;
+      border-bottom: 2px solid #f1eded;
+      margin: 10px; }
+    .manga .manga__articulo2 .manga__lista {
+      color: #f1eded;
+      margin-top: 15px;
+      line-height: 1.9; }
+  .manga .manga__tabla {
+    color: white;
+    height: 80%;
+    margin-top: 20px;
+    grid-area: tabla;
+    justify-self: center; }
+    .manga .manga__tabla .manga__tablainicio {
+      background-color: #360000;
+      color: #f1eded;
+      text-align: center;
+      caption-side: top;
+      border: 2px solid #811010;
+      font-weight: 600; }
+    .manga .manga__tabla .manga__tablasubtitulo {
+      background-color: #360000;
+      text-align: center;
+      border: 2px solid #811010;
+      font-weight: 600; }
+    .manga .manga__tabla .manga__imagenTabla {
+      height: 419px;
+      width: 267px; }
+    .manga .manga__tabla .manga__tablaelemento {
+      background-color: #811010;
+      padding-left: 8px;
+      vertical-align: top;
+      border: 2px solid #360000;
+      font-weight: 600; }
+    .manga .manga__tabla .manga__tablacolumna2 {
+      background-color: #811010;
+      text-align: center;
+      border: 2px solid #360000; }
 
 .anime {
-  margin: 0; }
-  .anime .anime__parrafo {
-    margin: 20px;
-    color: #f1eded;
-    font-size: 18px; }
-
-/*grid del body de las otras paginas*/
-.container2 {
+  margin: 0;
   display: grid;
-  grid-template-columns: 100%;
-  grid-template-rows: 205px 90px 1fr 300px;
-  grid-template-areas: "header" "nav" "main" "footer"; }
+  grid-template-columns: 1.7fr 1fr;
+  grid-template-rows: auto 0.5fr 1fr;
+  grid-template-areas: "titulo titulo" "anime tabla" "curio tabla"; }
+  .anime .subtitulo {
+    grid-area: titulo; }
+  .anime .anime__articulo1 {
+    grid-area: anime; }
+    .anime .anime__articulo1 .anime__parrafo {
+      margin: 20px;
+      color: #f1eded;
+      font-size: 18px; }
+  .anime .anime__articulo2 {
+    grid-area: curio; }
+    .anime .anime__articulo2 .anime__curioTitulo {
+      color: #811010;
+      border-bottom: 2px solid #f1eded;
+      margin: 10px; }
+    .anime .anime__articulo2 .anime__lista {
+      color: #f1eded;
+      margin-top: 15px;
+      line-height: 1.9; }
+  .anime .anime__tabla {
+    color: white;
+    height: 80%;
+    margin-top: 20px;
+    grid-area: tabla;
+    justify-self: center;
+    align-self: center; }
+    .anime .anime__tabla .anime__tablainicio {
+      background-color: #360000;
+      color: #f1eded;
+      text-align: center;
+      caption-side: top;
+      border: 2px solid #811010;
+      font-weight: 600; }
+    .anime .anime__tabla .anime__tablasubtitulo {
+      background-color: #360000;
+      text-align: center;
+      border: 2px solid #811010;
+      font-weight: 600; }
+    .anime .anime__tabla .anime__imagenTabla {
+      height: 378px;
+      width: 267px; }
+    .anime .anime__tabla .anime__tablaelemento {
+      background-color: #811010;
+      padding-left: 8px;
+      vertical-align: top;
+      border: 2px solid #360000;
+      font-weight: 600; }
+    .anime .anime__tabla .anime__tablacolumna2 {
+      background-color: #811010;
+      text-align: center;
+      border: 2px solid #360000; }
 
 /*grid para el main de las otras paginas*/
 .main2, .links {
@@ -234,9 +339,16 @@ p {
   grid-template-rows: 70px auto auto;
   gap: 0px 0px;
   grid-template-areas: "tituloPrincipal" "seccion1" "seccion2";
-  grid-area: main; }
+  grid-area: main;
+  margin-bottom: 10px; }
 
 /*Grid de la pagina de Media*/
+.parrafoPrincipal {
+  padding: 15px;
+  background-color: #0f0f29;
+  font-size: 23px;
+  text-align: center; }
+
 .galeriaConteiner {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -261,23 +373,9 @@ p {
   width: 800px; }
 
 /*Bootstrap*/
-.list-group {
-  flex: auto; }
-
-.list-group-item {
-  background-color: #15163c;
-  border: 3px solid #0e0e1d; }
-
 .container {
   max-width: 1700px;
   margin-bottom: 10px; }
-
-.carousel {
-  margin-top: 80px;
-  margin-bottom: 10px; }
-
-.list-group-item {
-  position: static; }
 
 /* enlaces */
 .enlaces {
@@ -285,37 +383,72 @@ p {
   color: white; }
 
 /*Estilo para la pagina Links*/
-.sectionAnimeManga {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100%;
-  grid-template-areas: "anime manga";
-  gap: 5px; }
-  .sectionAnimeManga .sectionAnimeManga__Anime {
-    grid-area: anime;
-    display: flex;
-    flex: auto;
-    flex-direction: row;
-    justify-content: space-around; }
-  .sectionAnimeManga .sectionAnimeManga__Manga {
-    grid-area: manga;
-    display: flex;
-    flex: auto;
-    flex-direction: row;
-    justify-content: space-around; }
-
-.sectionAnimeManga__lista {
-  width: 100%;
-  margin-top: 15px; }
-
-.gif {
-  border-width: 10px;
-  border-color: black; }
-
 .redes {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px; }
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "titulo titulo" "gif links";
+  gap: 10px; }
+  .redes .subtitulo {
+    grid-area: titulo; }
+  .redes .redes__lista {
+    grid-area: links;
+    justify-self: flex-start;
+    align-self: center; }
+    .redes .redes__lista .redes__item {
+      list-style-type: none; }
+      .redes .redes__lista .redes__item .redes__enlaces {
+        color: white;
+        text-align: 3;
+        font-size: 25px; }
+
+.sectionAnime {
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "titulo titulo" "gif links";
+  gap: 10px; }
+  .sectionAnime .subtitulo {
+    grid-area: titulo; }
+  .sectionAnime .sectionAnime__lista {
+    grid-area: links;
+    justify-self: flex-start;
+    align-self: center; }
+  .sectionAnime .gif {
+    grid-area: gif;
+    justify-self: center;
+    align-self: center; }
+
+.sectionManga {
+  display: grid;
+  grid-auto-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: "titulo titulo" "links gif";
+  gap: 10px; }
+  .sectionManga .subtitulo {
+    grid-area: titulo; }
+  .sectionManga .sectionManga__lista {
+    grid-area: links;
+    justify-self: center;
+    align-self: center; }
+  .sectionManga .gif {
+    grid-area: gif;
+    justify-self: center;
+    align-self: center; }
+
+.imagenIcono {
+  height: 60px;
+  width: 60px; }
+
+/*Estilo pagina Links con extend*/
+.links .links__lista {
+  margin: 0; }
+  .links .links__lista .links__elemento {
+    list-style-type: none; }
+    .links .links__lista .links__elemento .links__enlaces {
+      color: #f1eded;
+      text-align: 3;
+      font-size: 25px; }
 
 /**media queries*/
 @media only screen and (max-width: 600px) {
@@ -335,13 +468,15 @@ p {
       justify-content: space-between;
       align-items: center; }
       .section1 .section1__articulo .section1__parrafoprincipal {
-        width: 65%; }
+        width: 90%; }
       .section1 .section1__articulo .section1__imageninicio {
         height: 412px;
         width: 284px; }
   .section2__imagen2 {
     height: 162px;
     width: 280px; }
+  .aside__imagen {
+    max-width: 100%; }
   .personajes {
     display: flex;
     flex-direction: column;
@@ -350,26 +485,48 @@ p {
   .galeriaConteiner {
     display: flex;
     flex-direction: column; }
-  .sectionAnimeManga {
-    display: flex;
-    flex-direction: column; }
-    .sectionAnimeManga .sectionAnimeManga__Anime {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around; }
-    .sectionAnimeManga .sectionAnimeManga__Manga {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around; }
+  /*Estilos para la pagina Links*/
+  .redes {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas: "titulo" "links" "gif"; }
+  .sectionAnime {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas: "titulo" "links" "gif"; }
+  .sectionManga {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas: "titulo" "links" "gif"; }
   .gif {
     height: 268px;
     width: 268px; }
-  .redes {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around; }
-  .carousel {
-    margin-top: 10px; } }
+  .redes__gif {
+    max-width: 100%;
+    height: 300px; }
+  /*Estilos para la pagina historia*/
+  /*estilo pagina de Historia*/
+  .manga {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 0.5fr 1fr 1fr;
+    grid-template-areas: "titulo" "manga" "tabla" "curio"; }
+    .manga .manga__articulo2 {
+      margin-top: 10px;
+      margin-bottom: 10px; }
+  .anime {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 0.5fr 1fr auto;
+    grid-template-areas: "titulo" "anime" "tabla" "curio"; }
+    .anime .anime__articulo2 {
+      margin-top: 10px;
+      margin-bottom: 10px; } }
 
 @media only screen and (min-width: 600px) {
   .main {
@@ -386,7 +543,10 @@ p {
     width: 80%; }
   .gif {
     height: 201px;
-    width: 201px; } }
+    width: 201px; }
+  .redes__gif {
+    height: 308px;
+    width: 400px; } }
 
 @media only screen and (min-width: 992px) {
   .main {
@@ -412,4 +572,7 @@ p {
     max-height: 900px; }
   .gif {
     height: 268px;
-    width: 268px; } }
+    width: 268px; }
+  .redes__gif {
+    height: 308px;
+    width: 490px; } }
