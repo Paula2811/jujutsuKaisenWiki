@@ -232,7 +232,11 @@ p {
       .manga .manga__articulo1 .manga__botonSpoliler .manga__container {
         color: #15163c; }
         .manga .manga__articulo1 .manga__botonSpoliler .manga__container .manga__spoiler {
-          margin: 2px; }
+          margin: 2px;
+          display: flex;
+          flex-direction: column; }
+          .manga .manga__articulo1 .manga__botonSpoliler .manga__container .manga__spoiler .manga__textospoiler {
+            color: black; }
   .manga .manga__articulo2 {
     grid-area: curio; }
     .manga .manga__articulo2 .manga__curioTitulo {

@@ -280,6 +280,11 @@ p{
                 color: $colorFondo;
                 .manga__spoiler{
                     margin: 2px;
+                    display: flex;
+                    flex-direction: column;
+                    .manga__textospoiler{
+                        color: black;
+                    }
                 }
             }
         }
