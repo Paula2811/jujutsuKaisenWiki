@@ -399,7 +399,8 @@ p {
     justify-self: flex-start;
     align-self: center; }
     .redes .redes__lista .redes__item {
-      list-style-type: none; }
+      list-style-type: none;
+      display: flex; }
       .redes .redes__lista .redes__item .redes__enlaces {
         color: #f1eded;
         text-align: 3;
@@ -452,7 +453,8 @@ p {
 .links .links__lista {
   margin: 0; }
   .links .links__lista .links__elemento {
-    list-style-type: none; }
+    list-style-type: none;
+    display: flex; }
     .links .links__lista .links__elemento .links__enlaces {
       color: #f1eded;
       text-align: 3;

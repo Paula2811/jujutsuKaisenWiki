@@ -478,6 +478,7 @@ p{
         align-self: center;
         .redes__item{
             list-style-type: none;
+            display: flex;
             .redes__enlaces{
                 color: $colorParrafos;
                 text-align: 3;
@@ -543,6 +544,7 @@ p{
         margin: 0;
         .links__elemento{
             list-style-type: none;
+            display: flex;
             .links__enlaces{
                 
                 color: $colorParrafos;
