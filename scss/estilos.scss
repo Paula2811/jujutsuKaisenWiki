@@ -7,6 +7,7 @@ $colorTablaTitulo: #360000;
 $colorTablaSub: #811010;
 $colorBorde: #11111f;
 $colorNavbar: #0f0f29;
+$navbar-dark-active-color: grey;
 
 /*Margen*/
 $headings-margin-bottom: 0px;
@@ -59,6 +60,13 @@ body{
                 width: 35%;
                 text-align: center;
                 text-decoration: none;
+            }
+            .navbar__listaMenu:hover{
+                color:$navbar-dark-active-color;
+                
+            }
+            .active{
+                color: $navbar-dark-active-color;
             }
         }
     }

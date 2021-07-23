@@ -46,6 +46,10 @@ body {
         width: 35%;
         text-align: center;
         text-decoration: none; }
+      .navbar .navbar__container .navbar__lista .navbar__listaMenu:hover {
+        color: grey; }
+      .navbar .navbar__container .navbar__lista .active {
+        color: grey; }
 
 /*Main*/
 .titulo {
